@@ -1,0 +1,87 @@
+body {
+  background-color: aqua;
+  font-family:sans-serif;
+  background-image: url("https://i.pinimg.com/originals/41/d6/b8/41d6b830967e8af43bb5614644ee63a2.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
+}
+
+.container {
+  margin-top: 150px;
+  margin-left: 35%;
+  width: 350px;
+  height:auto;
+  box-shadow: #0bec5a;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  background-color: rgb(176, 222, 248);
+}
+
+h1{
+  text-align: center;
+  padding-top: 15px;
+  position:relative;
+  cursor:pointer;
+ 
+  /* color:rgb(240, 26, 237); */
+}
+h1::after{
+  content:"";
+  position:absolute;
+  bottom:-5px;
+  height:4px;
+  width:60%;
+  left:20%;
+  background-color: rgb(6, 4, 4);
+  transition: 0.3s ;
+  transition-timing-function: ease-in-out;
+  transform:scaleX(0);
+}
+h1:hover::after{
+  transform:scaleX(1); 
+
+}
+
+.container input[type="text"],
+.container input[type="password"] {
+  width: 80%;
+  margin-left:20px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+}
+.container label{
+  font-size:20px;
+  margin-left: 20px;;
+
+}
+
+.container input[type="submit"] {
+  font-size:20px;
+  width: 90%;
+  margin-left: 10px;
+  padding: 15px;
+  
+  border: none;
+  background-color: #2954d6;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.container input[type="submit"]:hover {
+  background-color: #0bec5a;
+}
+h2{
+  margin-left:30%;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color:white;
+}
+h2 a{
+  text-decoration: none;
+  color:#0bec5a;
+}

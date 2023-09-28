@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>LUNCH Items</title>
+
+    <style>    
+
+*{
+
+    margin:0px;
+
+    padding:0px;
+
+    background-repeat:no-repeat;
+
+    background-size: cover;
+
+    background-attachment:fixed;
+
+   
+
+}
+
+h1{
+
+    text-emphasis-color:initial;
+
+    text-shadow: 10lvb;
+
+    color:rgb(37, 23, 232);
+
+    text-align:center;
+
+    padding:30px;
+
+    font-weight:bold;
+
+    font-family:cursive;
+
+    font-size: 72px;
+
+    /* transform:translate(100%);
+
+    animation:scrolling 7s linear infinite; */
+
+}
+
+@keyframes scrolling{
+
+    0%{
+
+    transform:translate(100%);
+
+    }
+
+    100%{
+
+    transform:translate(-100%);
+
+    }
+
+}
+
+.items{
+
+    display:grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    padding:30px 40px;
+
+    grid-column-gap: 20px;
+
+}
+
+.item img{
+
+    width:100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    cursor:pointer;
+
+    transition: 0.1s ease;
+
+    border-radius: 5px;
+
+}
+
+.item img:hover{
+
+    transform:scale(1.06);
+
+}
+
+.item h4{
+
+    padding:5px;
+
+    text-align: center;
+
+    font-size: 30px;
+
+   
+
+}
+
+.item button{
+
+    font-size: 20px;
+
+    border:none;
+
+    outline: none;
+
+    background-color: aquamarine;
+
+    cursor:pointer;
+
+    padding:40% ;
+
+    text-align: center;
+
+    margin-left:37%;
+
+    border-radius: 5px;
+
+    display:block;
+
+    margin:auto;
+
+    margin-bottom: 5%;
+
+}
+
+.item button:hover{
+
+    transform:scale(1.3);
+
+}
+
+ 
+
+.btn{
+
+    box-sizing: border-box;
+
+    padding:10px 60px;
+
+    background:#fff;
+
+    border:0;
+
+    outline:none;
+
+    cursor:pointer;
+
+    font-size: 22px;
+
+    font-weight:500px;
+
+    border-radius:30px;
+
+    align-content: center;
+
+    margin-left:10%;
+
+}
+
+.popup{
+
+    width:400px;
+
+    background:#fff;
+
+    border-radius:50px;
+
+    position:fixed;
+
+    top:0;
+
+    left:50%;
+
+    transform:translate(-50%,-50%) scale(0.1);
+
+    text-align: center;
+
+    padding:0 30px 30px;
+
+    color:#333;
+
+    visibility:hidden;
+
+    transition: transform 0.4s,top 0.4s;
+
+}
+
+.popup h2{
+
+    font-size:38px;
+
+    font-weight:500;
+
+    margin:30px 0 10px;
+
+}
+
+.popup button{
+
+    margin-left:10px;
+
+    width:100%;
+
+    margin-top:50px;
+
+    padding:10px 0;
+
+    background:#6fd649;
+
+    color:#fff;
+
+    border:0;
+
+    outline:none;
+
+    font-size:18px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 5px rgba(0,0,0,0.2);
+
+}
+
+.open-popup{
+
+    visibility:visible;
+
+    top:50%;
+
+    transform:translate(-50%,-50%) scale(1);
+
+ 
+
+}
+
+.item input{
+
+    width:12%;
+
+    height:23px;
+
+    margin-bottom: 3%;
+
+    margin-left: 45%;
+
+    background-color: bisque;
+
+    color:#281fcd;
+
+    text-align: center;
+
+    text-shadow: yellowgreen;
+
+ 
+
+}
+
+.cart img{
+
+    position:relative;
+
+    width:35px;
+
+    height: 35px;
+
+    margin-left:92%;
+
+    cursor: pointer;
+
+    border-radius: 10px;;
+
+    display:flex;
+
+}
+
+.quantity{
+
+    background-color: red;
+
+    border-radius: 50%;
+
+    display:block;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color:white;
+
+    position:absolute;
+
+    top:24%;
+
+    left:94%;
+
+    padding:3px 10px;
+
+    cursor:pointer;
+
+}
+
+.price{
+
+    color:rgb(231, 22, 19);
+
+    font-size: 30px;
+
+    margin-left:26%;
+
+}
+
+    </style>
+
+    <script>
+
+        let popup=document.getElementById("popup");
+
+    function openPopup(){
+
+   popup.classList.add("open-popup");
+
+        }
+
+function closePopup(){
+
+ popup.classList.remove("open-popup");
+
+        }
+
+    </script>
+
+</head>
+
+<body style="background-image: url('https://th.bing.com/th/id/OIP.2ksw3ZKYfUzcvr0c5BBa6gHaEK?w=321&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7')";>
+
+    <h1>LUNCH </h1>
+
+    <br>
+
+    <div class="cart">
+
+    <img src="https://static.vecteezy.com/system/resources/previews/004/999/463/original/shopping-cart-icon-illustration-free-vector.jpg" alt="">
+
+    <span class="quantity"> 0</span>
+
+</div>
+
+</div>
+
+    <section class="items">
+
+        <div class="item">
+
+            <img src="https://spicecravings.com/wp-content/uploads/2017/12/Rajma-1.jpg" alt="Not loaded">
+
+            <h4> RAJMA</h4>
+
+            <h3 class="price">Price ::   Rs.50</h3>
+
+ 
+
+            <input type="number"  >
+
+            <button style="color:rgb(255, 255, 255);background-color: rgb(165, 95, 42);padding:13px;font-weight: bold;">Add</button>
+
+           
+
+        </div>
+
+        <div class="item" >
+
+            <img src="https://1.bp.blogspot.com/-_4DSfq957_Y/X1EaQ2SZ5-I/AAAAAAAABpo/OSdFWM9PCaAjKesbT0SlLo6Vzrmud4oBwCNcBGAsYHQ/s2048/DSC_9074%2Bcopy.jpg" alt="Not loaded" >
+
+            <h4 >VADA PAV</h4>
+
+            <h3 class="price">Price :: Rs. 100</h3>
+
+            <input type="number"  >
+
+            <button style="color:rgb(255, 255, 255);background-color: rgb(165, 95, 42);padding:13px;font-weight: bold;">Add</button>
+
+        </div>
+
+        <div class="item">
+
+            <img src="https://th.bing.com/th/id/OIP.5RJj0zSO23HgEp96IOudvwHaLH?pid=ImgDet&rs=1" alt="Not loaded"
+
+            >
+
+            <h4 >CHANA MASALA</h4>
+
+            <h3 class="price">Price :: Rs. 99</h3>
+
+ 
+
+            <input type="number"  >
+
+            <button style="color:rgb(255, 255, 255);background-color: rgb(165, 95, 42);padding:13px;font-weight: bold;">Add</button>
+
+        </div>
+
+       
+
+        <div class="item">
+
+            <img src="https://i0.wp.com/ahappytreat.com/wp-content/uploads/2020/07/DSC_0015_1.jpg?fit=6000%2C4000&ssl=1 alt="Not loaded">
+
+            <p></p>
+
+            <h4> Paneer massala</h4>
+
+            <h3 class="price">Price :: Rs. 200</h3>
+
+ 
+
+            <input type="number"  >
+
+            <button style="color:rgb(255, 255, 255);background-color: rgb(165, 95, 42);padding:13px;font-weight: bold;">Add</button>
+
+        </div>
+
+       
+
+        <div class="item">
+
+            <img src="https://recipes.timesofindia.com/thumb/53097626.cms?imgsize=156015&width=800&height=800" alt="Not loaded" >
+
+            <h4 >DAAL MAKHANI</h4>
+
+            <h3 class="price">Price :: Rs. 200</h3>
+
+ 
+
+            <input type="number"  >
+
+            <button style="color:rgb(255, 255, 255);background-color: rgb(165, 95, 42);padding:13px;font-weight: bold;">Add</button>
+
+        </div>
+
+        <div class="item">
+
+            <img src="https://1.bp.blogspot.com/-chEH4C625RI/XtvLAdsnFeI/AAAAAAAAiBY/YF4WCz5RdwkNcPjvEQGO2ehATzKG3VXWgCK4BGAsYHg/s3195/20200528_124320.jpg" alt="Not loaded" >
+
+            <h4>NAAN</h4>
+
+            <h3 class="price">Price :: Rs. 200</h3>
+
+ 
+
+            <input type="number"  >
+
+            <button style="color:rgb(255, 255, 255);background-color: rgb(165, 95, 42);padding:13px;font-weight: bold;">Add</button>
+
+        </div>
+
+        <div class="item">
+
+            <img src="https://i.ytimg.com/vi/JqP4wSWsYr4/maxresdefault.jpg" alt="Not loaded" >
+
+            <h4>Veg Briyani</h4>
+
+            <h3 class="price">Price :: Rs. 200</h3>
+
+ 
+
+            <input type="number"  >
+
+            <button style="color:rgb(255, 255, 255);background-color: rgb(165, 95, 42);padding:13px;font-weight: bold;">Add</button>
+
+        </div>
+
+        <div class="item">
+
+            <img src="https://i0.wp.com/thespicemess.com/wp-content/uploads/2020/10/Chicken-Biryani-29-feature-1.jpg?fit=2048%2C1525&ssl=1" alt="Not loaded" >
+
+            <h4>Chicken Briyani</h4>
+
+            <h3 class="price">Price :: Rs. 400</h3>
+
+ 
+
+            <input type="number"  >
+
+            <button style="color:rgb(255, 255, 255);background-color: rgb(165, 95, 42);padding:13px;font-weight: bold;">Add</button>
+
+        </div>
+
+        <div class="item">
+
+            <img src="https://www.outlookindia.com/outlooktraveller/public/uploads/filemanager/images/Rajasthani-Traditional-Cuisine-Dal-Baati-Also-Know-as-Dal-Bati-or-Daal-Baati-Churma.jpg" >
+
+            <h4>DAAL BAATI</h4>
+
+            <h3 class="price">Price :: Rs. 200</h3>
+
+ 
+
+            <input type="number"  >
+
+            <button style="color:rgb(255, 255, 255);background-color: rgb(165, 95, 42);padding:13px;font-weight: bold;">Add</button>
+
+        </div>
+
+        <div></div>
+
+       
+
+    </div>
+
+    <div>
+
+        <button type="order" class="btn" onclick="openPopup()" style="color:rgb(38, 0, 255)">
+           <a style="text-decoration: none;" href="http://127.0.0.1:5502/Payment.html">
+            <b>click here for place order</b>
+           </a>
+            
+
+        </button>
+
+        <div class="popup" id="popup">
+
+            <img src="https://cdn.pixabay.com/photo/2015/10/30/12/19/download-1013983_640.jpg" alt="Not loaded yet" style="width:200px;height:200px">
+
+            <h2 style="color:rgb(34, 127, 208)">Thank You!</h2>
+
+            <p style="color:rgb(14, 188, 84);font-size:24px;">Your Order has been Placed</p>
+
+            <button type="button" onclick="closePopup()">OK</button>
+
+        </div>
+
+    </section>
+      
+ 
+
+   
+
+</body>
+
+
+</html>

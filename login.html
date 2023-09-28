@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form onsubmit="validateForm(event)">
+        <label > Username</label>
+      <input type="text" id="username" placeholder="Username" required>
+      <label > Password</label>
+
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+  <h2> Don't have an account? <a href="http://127.0.0.1:5502/sign_up.html?">SignUp Here</a></h2>
+
+  <script>
+    function validateForm(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Perform validation
+      if (username === "harish" && password === "12345678") {
+        // ("Login successful!");
+        location.href="http://127.0.0.1:5502/H2ndpg.html";
+        // Redirect to another page or perform other actions
+      } else {
+        alert("Invalid username or password. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>
